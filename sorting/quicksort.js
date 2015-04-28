@@ -15,7 +15,6 @@
             }
         } while (i <= j);
         if ( j > 0 ) sort(array, j);
-        if ( length > i ) sort(array+i, j-i);
     }
     var a = [3, 2, 4, 5, 1, 6];
     a.sort(); //1 2 3 4 5 6
