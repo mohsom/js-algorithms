@@ -2,8 +2,8 @@
  * Created by mohsom on 28.04.2015.
  */
 (function () {
-    function sort(array, length) {
-        var i = 0, j = length;
+    function sort(array) {
+        var i = 0, j = array.length;
         var p = array[parseInt(toString(j / 2))];
         do {
             while(a[i]<p) i++;
