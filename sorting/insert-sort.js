@@ -6,7 +6,7 @@
         var size = array.length;
         for (var i = 0; i < size; i++) {
             var x = array[i];
-            for (var j = i - 1; j >= 0 && a[j] > x; j--) {
+            for (var j = i - 1; j >= 0 && array[j] > x; j--) {
                 array[j + 1] = array[j];
             }
             array[j + 1] = x;
