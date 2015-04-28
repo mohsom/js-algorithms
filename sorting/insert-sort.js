@@ -8,8 +8,8 @@
             var x = array[i];
             for (var j = i - 1; j >= 0 && a[j] > x; j--) {
                 array[j + 1] = array[j];
-                array[j + 1] = x;
             }
+            array[j + 1] = x;
         }
     }
     var a = [3, 2, 4, 5, 1, 6];
