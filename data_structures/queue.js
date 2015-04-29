@@ -10,13 +10,16 @@
     }
 
     Queue.prototype.enqueue = function (elem) {
-        $queue.pop(elem);
+        $queue.push(elem);
         $size++;
+        console.log($queue,+' '+$size);
     };
     Queue.prototype.dequeue = function () {
         if (!this.isEmpty()) {
             var val = $queue[0];
+            $size--;
             $queue.splice(0, 1);
+            console.log($queue,+' '+$size);
         }
         else {
             return null;
@@ -30,5 +33,8 @@
         else {
             return false;
         }
-    }
+    };
+    var a=new Queue();
+    a.enqueue('1');
+    a.enqueue('2');
 })();
