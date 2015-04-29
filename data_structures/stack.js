@@ -44,11 +44,21 @@
     Stack.prototype.size = function () {
         return $size;
     };
+    Stack.prototype.swap = function () {
+        if (this.size() >= 2) {
+             var tmp=$stack[1];
+            $stack[1]=$stack[0];
+            $stack[0]=tmp;
+        }
+        else {
+            return false;
+        }
+    };
     var a = new Stack();
     a.push('1');
     a.push('3');
     a.push('2');
     a.pop();
-    console.log(a.top());
+    a.swap();
     a.clear();
 })();
