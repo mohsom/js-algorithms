@@ -8,13 +8,18 @@
     }
 
     Stack.prototype.push = function (elem) {
+        $stack.reverse();
         $stack.push(elem);
+        $stack.reverse();
         $size++;
     };
     Stack.prototype.pop = function () {
-        $stack.reverse();
-        $stack.pop();
-        $stack.reverse();
+        if (!this.isEmpty()) {
+            $stack.reverse();
+            $stack.pop();
+            $stack.reverse();
+            $size--;
+        }
     };
     Stack.prototype.isEmpty = function () {
         if ($size === 0) {
@@ -26,18 +31,24 @@
     };
     Stack.prototype.clear = function () {
         $stack.splice(0, $size - 1);
+        $size = 0;
     };
     Stack.prototype.top = function () {
         if (!this.isEmpty()) {
             return $stack[0];
         }
-        else{
+        else {
             return null;
         }
     };
+    Stack.prototype.size = function () {
+        return $size;
+    };
     var a = new Stack();
     a.push('1');
+    a.push('3');
     a.push('2');
     a.pop();
+    console.log(a.top());
     a.clear();
 })();
