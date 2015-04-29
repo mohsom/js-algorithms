@@ -9,8 +9,16 @@
     Stack.prototype.push=function(elem){
         $stack.push(elem);
         $size++;
+        console.log($stack);
     };
     Stack.prototype.pop=function(){
-
-    }
+        $stack.reverse();
+        $stack.pop();
+        $stack.reverse();
+        console.log($stack);
+    };
+    var a=new Stack();
+    a.push('1');
+    a.push('2');
+    a.pop();
 })();
