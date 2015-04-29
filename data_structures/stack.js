@@ -20,6 +20,9 @@
             $stack.reverse();
             $size--;
         }
+        else {
+            return false;
+        }
     };
     Stack.prototype.isEmpty = function () {
         if ($size === 0) {
@@ -30,8 +33,13 @@
         }
     };
     Stack.prototype.clear = function () {
-        $stack.splice(0, $size - 1);
-        $size = 0;
+        if (!this.isEmpty()) {
+            $stack.splice(0, $size - 1);
+            $size = 0;
+        }
+        else {
+            return false;
+        }
     };
     Stack.prototype.top = function () {
         if (!this.isEmpty()) {
@@ -46,19 +54,12 @@
     };
     Stack.prototype.swap = function () {
         if (this.size() >= 2) {
-             var tmp=$stack[1];
-            $stack[1]=$stack[0];
-            $stack[0]=tmp;
+            var tmp = $stack[1];
+            $stack[1] = $stack[0];
+            $stack[0] = tmp;
         }
         else {
             return false;
         }
     };
-    var a = new Stack();
-    a.push('1');
-    a.push('3');
-    a.push('2');
-    a.pop();
-    a.swap();
-    a.clear();
 })();
