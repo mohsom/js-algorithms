@@ -27,6 +27,14 @@
     Stack.prototype.clear = function () {
         $stack.splice(0, $size - 1);
     };
+    Stack.prototype.top = function () {
+        if (!this.isEmpty()) {
+            return $stack[0];
+        }
+        else{
+            return null;
+        }
+    };
     var a = new Stack();
     a.push('1');
     a.push('2');
