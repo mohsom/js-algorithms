@@ -16,7 +16,7 @@
     Queue.prototype.dequeue = function () {
         if (!this.isEmpty()) {
             var val = $queue[0];
-            $queue.splice(0,1);
+            $queue.splice(0, 1);
         }
         else {
             return null;
@@ -31,5 +31,4 @@
             return false;
         }
     }
-})
-();
+})();
