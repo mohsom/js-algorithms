@@ -14,7 +14,6 @@
         $size++;
         $head = $queue[0];
         $tail = $queue[$size - 1];
-        console.log($queue, +' ' + $size + ' ' + $head + ' ' + $tail);
     };
     Queue.prototype.dequeue = function () {
         if (!this.isEmpty()) {
@@ -29,7 +28,6 @@
                 $head = null;
                 $tail = null;
             }
-            console.log($queue, +' ' + $size + ' ' + $head + ' ' + $tail);
             return val;
         }
         else {
@@ -45,10 +43,4 @@
             return false;
         }
     };
-    var a = new Queue();
-    a.enqueue('1');
-    a.enqueue('2');
-    console.log(a.isEmpty());
-    a.dequeue();
-    a.dequeue();
 })();
