@@ -33,11 +33,19 @@
         else {
             return null;
         }
-    }
-    ;
+    };
     Queue.prototype.isEmpty = function () {
         if ($size === 0) {
             return true;
+        }
+        else {
+            return false;
+        }
+    };
+    Queue.prototype.clear = function () {
+        if (!this.isEmpty()) {
+            $queue.splice(0, $size - 1);
+            $size = 0;
         }
         else {
             return false;
