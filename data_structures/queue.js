@@ -30,6 +30,7 @@
                 $tail = null;
             }
             console.log($queue, +' ' + $size + ' ' + $head + ' ' + $tail);
+            return val;
         }
         else {
             return null;
