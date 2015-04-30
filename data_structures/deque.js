@@ -36,6 +36,7 @@
             $stack.pop();
             $stack.reverse();
             $size--;
+            $first=$deque[0];
         }
         else {
             return false;
@@ -45,9 +46,26 @@
         if (!this.isEmpty()) {
             $stack.pop();
             $size--;
+            $last=$deque[$size-1];
         }
         else {
             return false;
+        }
+    };
+    Deque.prototype.getFirst=function(){
+        if(!this.isEmpty()){
+            return $first;
+        }
+        else{
+            return null;
+        }
+    };
+    Deque.prototype.getLast=function(){
+        if(!this.isEmpty()){
+            return $last;
+        }
+        else{
+            return null;
         }
     }
 })();
