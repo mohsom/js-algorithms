@@ -22,13 +22,17 @@
         $deque.reverse();
         $size++;
         $first=$deque[0];
+        $last=$deque[$size-1];
+        console.log($deque+' '+'head: '+$first+' tail: '+$last);
     };
     Deque.prototype.pushEnd=function(elem){
         $deque.reverse();
         $deque.push(elem);
         $deque.reverse();
         $size++;
+        $first=$deque[0];
         $last=$deque[$size-1];
+        console.log($deque+' '+'head: '+$first+' tail: '+$last);
     };
     Deque.prototype.popBegin=function(){
         if (!this.isEmpty()) {
@@ -38,6 +42,8 @@
             $deque.reverse();
             $size--;
             $first=$deque[0];
+            $last=$deque[$size-1];
+            console.log($deque+' '+'head: '+$first+' tail: '+$last);
             return return_val;
         }
         else {
@@ -49,7 +55,9 @@
             var return_val=$deque[$size-1];
             $deque.pop();
             $size--;
+            $first=$deque[0];
             $last=$deque[$size-1];
+            console.log($deque+' '+'head: '+$first+' tail: '+$last);
             return return_val;
         }
         else {
@@ -76,9 +84,19 @@
         if (!this.isEmpty()) {
             $deque.splice(0, $size - 1);
             $size = 0;
+            $first=null;
+            $last=null;
+            console.log($deque+' '+'head: '+$first+' tail: '+$last);
         }
         else {
             return false;
         }
-    }
+    };
+    var a=new Deque();
+    a.pushBegin('1');
+    a.pushEnd('2');
+    a.pushEnd('3');
+    a.popBegin();
+    a.popEnd();
+    a.clear();
 })();
