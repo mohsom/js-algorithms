@@ -15,10 +15,12 @@
     };
     Stack.prototype.pop = function () {
         if (!this.isEmpty()) {
+            var return_val=$stack[0];
             $stack.reverse();
             $stack.pop();
             $stack.reverse();
             $size--;
+            return return_val;
         }
         else {
             return false;

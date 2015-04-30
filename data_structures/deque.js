@@ -32,11 +32,13 @@
     };
     Deque.prototype.popBegin=function(){
         if (!this.isEmpty()) {
-            $stack.reverse();
-            $stack.pop();
-            $stack.reverse();
+            var return_val=$deque[0];
+            $deque.reverse();
+            $deque.pop();
+            $deque.reverse();
             $size--;
             $first=$deque[0];
+            return return_val;
         }
         else {
             return false;
@@ -44,9 +46,11 @@
     };
     Deque.prototype.popEnd=function(){
         if (!this.isEmpty()) {
-            $stack.pop();
+            var return_val=$deque[$size-1];
+            $deque.pop();
             $size--;
             $last=$deque[$size-1];
+            return return_val;
         }
         else {
             return false;
