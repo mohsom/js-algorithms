@@ -8,4 +8,26 @@
         $last=null;
         $size=0;
     }
+    Deque.prototype.isEmpty=function(){
+        if ($size === 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
+    Deque.prototype.pushBegin=function(elem){
+        $deque.reverse();
+        $deque.push(elem);
+        $deque.reverse();
+        $size++;
+        $first=$deque[0];
+    };
+    Deque.prototype.pushEnd=function(elem){
+        $deque.reverse();
+        $deque.push(elem);
+        $deque.reverse();
+        $size++;
+        $last=$deque[$size-1];
+    }
 })();
