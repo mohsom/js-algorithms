@@ -29,5 +29,25 @@
         $deque.reverse();
         $size++;
         $last=$deque[$size-1];
+    };
+    Deque.prototype.popBegin=function(){
+        if (!this.isEmpty()) {
+            $stack.reverse();
+            $stack.pop();
+            $stack.reverse();
+            $size--;
+        }
+        else {
+            return false;
+        }
+    };
+    Deque.prototype.popEnd=function(){
+        if (!this.isEmpty()) {
+            $stack.pop();
+            $size--;
+        }
+        else {
+            return false;
+        }
     }
 })();
