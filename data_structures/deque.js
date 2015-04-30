@@ -67,5 +67,14 @@
         else{
             return null;
         }
+    };
+    Deque.prototype.clear = function () {
+        if (!this.isEmpty()) {
+            $deque.splice(0, $size - 1);
+            $size = 0;
+        }
+        else {
+            return false;
+        }
     }
 })();

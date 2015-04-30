@@ -50,5 +50,5 @@
         else {
             return false;
         }
-    };
+    }
 })();
